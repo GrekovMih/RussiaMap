@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="anychart-core.min.js" type="text/javascript"></script>
+    <script src="anychart-map.min.js" type="text/javascript"></script>
+    <script src="world_source.js"></script>
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+
+</head>
+<body>
+
+<div id="container"></div>
+<script>
+    anychart.onDocumentReady(function () {
+        // create map
+        var map = anychart.map();
+
+        // create data set
+        var dataSet = anychart.data.set([{
+            'id': 'AF',
+            'value': 0
+        },
+            {
+                'id': 'AO',
+                'value': 1
+            },
+            {
+                'id': 'AL',
+                'value': 2
+            },
+            {
+                'id': 'AE',
+                'value': 3
+            },
+            {
+                'id': 'AR',
+                'value': 4
+            },
+            {
+                'id': 'AM',
+                'value': 5
+            },
+            {
+                'id': 'TF',
+                'value': 6
+            },
+            {
+                'id': 'AU',
+                'value': 7
+            },
+            {
+                'id': 'AT',
+                'value': 8
+            },
+            {
+                'id': 'AZ',
+                'value': 9
+            },
+            {
+                'id': 'BI',
+                'value': 10
+            },
+            {
+                'id': 'BE',
+                'value': 11
+            },
+            {
+                'id': 'BJ',
+                'value': 12
+            },
+            {
+                'id': 'BF',
+                'value': 13
+            },
+            {
+                'id': 'BD',
+                'value': 14
+            },
+            {
+                'id': 'BG',
+                'value': 15
+            },
+            {
+                'id': 'BS',
+                'value': 16
+            },
+            {
+                'id': 'BA',
+                'value': 17
+            },
+            {
+                'id': 'BY',
+                'value': 18
+            },
+            {
+                'id': 'BZ',
+                'value': 19
+            },
+            {
+                'id': 'BO',
+                'value': 20
+            },
+            {
+                'id': 'BR',
+                'value': 21
+            },
+            {
+                'id': 'BN',
+                'value': 22
+            },
+            {
+                'id': 'BT',
+                'value': 23
+            },
+            {
+                'id': 'BW',
+                'value': 24
+            },
+            {
+                'id': 'CF',
+                'value': 25
+            },
+            {
+                'id': 'CA',
+                'value': 26
+            },
+            {
+                'id': 'CH',
+                'value': 27
+            },
+            {
+                'id': 'CL',
+                'value': 28
+            },
+            {
+                'id': 'CN',
+                'value': 29
+            },
+            {
+                'id': 'CI',
+                'value': 30
+            },
+            {
+                'id': 'CM',
+                'value': 31
+            },
+            {
+                'id': 'CD',
+                'value': 32
+            },
+            {
+                'id': 'CG',
+                'value': 33
+            },
+            {
+                'id': 'CO',
+                'value': 34
+            },
+            {
+                'id': 'CR',
+                'value': 35
+            },
+            {
+                'id': 'CU',
+                'value': 36
+            },
+            {
+                'id': 'N._Cyprus',
+                'value': 37
+            },
+            {
+                'id': 'CY',
+                'value': 38
+            },
+            {
+                'id': 'CZ',
+                'value': 39
+            },
+            {
+                'id': 'DE',
+                'value': 40
+            },
+            {
+                'id': 'DJ',
+                'value': 41
+            },
+            {
+                'id': 'DK',
+                'value': 42
+            },
+            {
+                'id': 'DO',
+                'value': 43
+            },
+            {
+                'id': 'DZ',
+                'value': 44
+            },
+            {
+                'id': 'EC',
+                'value': 45
+            },
+            {
+                'id': 'EG',
+                'value': 46
+            },
+            {
+                'id': 'ER',
+                'value': 47
+            },
+            {
+                'id': 'ES',
+                'value': 48
+            },
+            {
+                'id': 'EE',
+                'value': 49
+            },
+            {
+                'id': 'ET',
+                'value': 50
+            },
+            {
+                'id': 'FI',
+                'value': 51
+            },
+            {
+                'id': 'FJ',
+                'value': 52
+            },
+            {
+                'id': 'FK',
+                'value': 53
+            },
+            {
+                'id': 'FR',
+                'value': 54
+            },
+            {
+                'id': 'GA',
+                'value': 55
+            },
+            {
+                'id': 'GB',
+                'value': 56
+            },
+            {
+                'id': 'GE',
+                'value': 57
+            },
+            {
+                'id': 'GH',
+                'value': 58
+            },
+            {
+                'id': 'GN',
+                'value': 59
+            },
+            {
+                'id': 'GM',
+                'value': 60
+            },
+            {
+                'id': 'GW',
+                'value': 61
+            },
+            {
+                'id': 'GQ',
+                'value': 62
+            },
+            {
+                'id': 'GR',
+                'value': 63
+            },
+            {
+                'id': 'GL',
+                'value': 64
+            },
+            {
+                'id': 'GT',
+                'value': 65
+            },
+            {
+                'id': 'GY',
+                'value': 66
+            },
+            {
+                'id': 'HN',
+                'value': 67
+            },
+            {
+                'id': 'HR',
+                'value': 68
+            },
+            {
+                'id': 'HT',
+                'value': 69
+            },
+            {
+                'id': 'HU',
+                'value': 70
+            },
+            {
+                'id': 'ID',
+                'value': 71
+            },
+            {
+                'id': 'IN',
+                'value': 72
+            },
+            {
+                'id': 'IE',
+                'value': 73
+            },
+            {
+                'id': 'IR',
+                'value': 74
+            },
+            {
+                'id': 'IQ',
+                'value': 75
+            },
+            {
+                'id': 'IS',
+                'value': 76
+            },
+            {
+                'id': 'IL',
+                'value': 77
+            },
+            {
+                'id': 'IT',
+                'value': 78
+            },
+            {
+                'id': 'JM',
+                'value': 79
+            },
+            {
+                'id': 'JO',
+                'value': 80
+            },
+            {
+                'id': 'JP',
+                'value': 81
+            },
+            {
+                'id': 'KZ',
+                'value': 82
+            },
+            {
+                'id': 'KE',
+                'value': 83
+            },
+            {
+                'id': 'KG',
+                'value': 84
+            },
+            {
+                'id': 'KH',
+                'value': 85
+            },
+            {
+                'id': 'KR',
+                'value': 86
+            },
+            {
+                'id': 'Kosovo',
+                'value': 87
+            },
+            {
+                'id': 'KW',
+                'value': 88
+            },
+            {
+                'id': 'LA',
+                'value': 89
+            },
+            {
+                'id': 'LB',
+                'value': 90
+            },
+            {
+                'id': 'LR',
+                'value': 91
+            },
+            {
+                'id': 'LY',
+                'value': 92
+            },
+            {
+                'id': 'LK',
+                'value': 93
+            },
+            {
+                'id': 'LS',
+                'value': 94
+            },
+            {
+                'id': 'LT',
+                'value': 95
+            },
+            {
+                'id': 'LU',
+                'value': 96
+            },
+            {
+                'id': 'LV',
+                'value': 97
+            },
+            {
+                'id': 'MA',
+                'value': 98
+            },
+            {
+                'id': 'MD',
+                'value': 99
+            },
+            {
+                'id': 'MG',
+                'value': 100
+            },
+            {
+                'id': 'MX',
+                'value': 101
+            },
+            {
+                'id': 'MK',
+                'value': 102
+            },
+            {
+                'id': 'ML',
+                'value': 103
+            },
+            {
+                'id': 'MM',
+                'value': 104
+            },
+            {
+                'id': 'ME',
+                'value': 105
+            },
+            {
+                'id': 'MN',
+                'value': 106
+            },
+            {
+                'id': 'MZ',
+                'value': 107
+            },
+            {
+                'id': 'MR',
+                'value': 108
+            },
+            {
+                'id': 'MW',
+                'value': 109
+            },
+            {
+                'id': 'MY',
+                'value': 110
+            },
+            {
+                'id': 'NA',
+                'value': 111
+            },
+            {
+                'id': 'NC',
+                'value': 112
+            },
+            {
+                'id': 'NE',
+                'value': 113
+            },
+            {
+                'id': 'NG',
+                'value': 114
+            },
+            {
+                'id': 'NI',
+                'value': 115
+            },
+            {
+                'id': 'NL',
+                'value': 116
+            },
+            {
+                'id': 'NO',
+                'value': 117
+            },
+            {
+                'id': 'NP',
+                'value': 118
+            },
+            {
+                'id': 'NZ',
+                'value': 119
+            },
+            {
+                'id': 'OM',
+                'value': 120
+            },
+            {
+                'id': 'PK',
+                'value': 121
+            },
+            {
+                'id': 'PA',
+                'value': 122
+            },
+            {
+                'id': 'PE',
+                'value': 123
+            },
+            {
+                'id': 'PH',
+                'value': 124
+            },
+            {
+                'id': 'PG',
+                'value': 125
+            },
+            {
+                'id': 'PL',
+                'value': 126
+            },
+            {
+                'id': 'PR',
+                'value': 127
+            },
+            {
+                'id': 'KP',
+                'value': 128
+            },
+            {
+                'id': 'PT',
+                'value': 129
+            },
+            {
+                'id': 'PY',
+                'value': 130
+            },
+            {
+                'id': 'PS',
+                'value': 131
+            },
+            {
+                'id': 'QA',
+                'value': 132
+            },
+            {
+                'id': 'RO',
+                'value': 133
+            },
+            {
+                'id': 'RU',
+                'value': 134
+            },
+            {
+                'id': 'RW',
+                'value': 135
+            },
+            {
+                'id': 'EH',
+                'value': 136
+            },
+            {
+                'id': 'SA',
+                'value': 137
+            },
+            {
+                'id': 'SD',
+                'value': 138
+            },
+            {
+                'id': 'SS',
+                'value': 139
+            },
+            {
+                'id': 'SN',
+                'value': 140
+            },
+            {
+                'id': 'SB',
+                'value': 141
+            },
+            {
+                'id': 'SL',
+                'value': 142
+            },
+            {
+                'id': 'SV',
+                'value': 143
+            },
+            {
+                'id': 'Somaliland',
+                'value': 144
+            },
+            {
+                'id': 'SO',
+                'value': 145
+            },
+            {
+                'id': 'RS',
+                'value': 146
+            },
+            {
+                'id': 'SR',
+                'value': 147
+            },
+            {
+                'id': 'SK',
+                'value': 148
+            },
+            {
+                'id': 'SI',
+                'value': 149
+            },
+            {
+                'id': 'SE',
+                'value': 150
+            },
+            {
+                'id': 'SZ',
+                'value': 151
+            },
+            {
+                'id': 'SY',
+                'value': 152
+            },
+            {
+                'id': 'TD',
+                'value': 153
+            },
+            {
+                'id': 'TG',
+                'value': 154
+            },
+            {
+                'id': 'TH',
+                'value': 155
+            },
+            {
+                'id': 'TJ',
+                'value': 156
+            },
+            {
+                'id': 'TM',
+                'value': 157
+            },
+            {
+                'id': 'TL',
+                'value': 158
+            },
+            {
+                'id': 'TT',
+                'value': 159
+            },
+            {
+                'id': 'TN',
+                'value': 160
+            },
+            {
+                'id': 'TR',
+                'value': 161
+            },
+            {
+                'id': 'TW',
+                'value': 162
+            },
+            {
+                'id': 'TZ',
+                'value': 163
+            },
+            {
+                'id': 'UG',
+                'value': 164
+            },
+            {
+                'id': 'UA',
+                'value': 165
+            },
+            {
+                'id': 'UY',
+                'value': 166
+            },
+            {
+                'id': 'US',
+                'value': 167
+            },
+            {
+                'id': 'UZ',
+                'value': 168
+            },
+            {
+                'id': 'VE',
+                'value': 169
+            },
+            {
+                'id': 'VN',
+                'value': 170
+            },
+            {
+                'id': 'VU',
+                'value': 171
+            },
+            {
+                'id': 'YE',
+                'value': 172
+            },
+            {
+                'id': 'ZA',
+                'value': 173
+            },
+            {
+                'id': 'ZM',
+                'value': 174
+            },
+            {
+                'id': 'ZW',
+                'value': 175
+            }
+        ]);
+
+        // create choropleth series
+        series = map.choropleth(dataSet);
+
+        // set geoIdField to 'id', this field contains in geo data meta properties
+        series.geoIdField('id');
+
+        // set map color settings
+        series.colorScale(anychart.scales.linearColor('#deebf7')); //, '#3182bd'
+        series.hovered().fill('#addd8e');
+        series.selected().fill('#3182bd');
+
+
+        // set geo data, you can find this map in our geo maps collection
+        // https://www.anychart.com/download/cdn/
+        map.geoData(anychart.maps['world_source']);
+
+        //set map container id (div)
+        map.container('container');
+
+        //initiate map drawing
+        map.draw();
+    });
+</script>
+
+
+</body>
+</html>
